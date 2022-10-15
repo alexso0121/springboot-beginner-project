@@ -1,0 +1,6 @@
+{
+  "timestamp": "2022-10-15T10:20:56.046+00:00",
+  "status": 405,
+  "error": "Method Not Allowed",
+  "path": "/Products"
+}

@@ -1,6 +1,7 @@
 package com.javatechie.trymysql.contoller;
 
-import com.javatechie.trymysql.entity.Product;
+import com.javatechie.trymysql.Entity.Product;
+
 import com.javatechie.trymysql.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController

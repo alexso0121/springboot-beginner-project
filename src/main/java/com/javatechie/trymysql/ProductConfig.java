@@ -1,6 +1,7 @@
 package com.javatechie.trymysql;
 
-import com.javatechie.trymysql.entity.Product;
+import com.javatechie.trymysql.Entity.Product;
+
 import com.javatechie.trymysql.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.CommandLineRunner;

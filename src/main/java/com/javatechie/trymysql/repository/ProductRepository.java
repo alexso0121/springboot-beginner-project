@@ -1,6 +1,7 @@
 package com.javatechie.trymysql.repository;
 
-import com.javatechie.trymysql.entity.Product;
+import com.javatechie.trymysql.Entity.Product;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
