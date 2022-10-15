@@ -9,14 +9,4 @@ spring:
 #    hibernate:
 #      ddl-auto: update
 #    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-  thymeleaf:
-    cache: false
-    prefix: classpath:/template/
-    suffix: .html
-    encoding: UTF-8
-  profiles:
-    active: dev
-  mvc:
-    view:
-      prefix: /
-      suffix: .jsp
+  …

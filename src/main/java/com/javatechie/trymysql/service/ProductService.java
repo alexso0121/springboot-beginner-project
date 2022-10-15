@@ -4,6 +4,8 @@ import com.javatechie.trymysql.entity.Product;
 import com.javatechie.trymysql.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -12,13 +14,13 @@ public class ProductService {
     @Autowired
     private ProductRepository Repository;
 
-    public void addNewProduct(Product product) {
-        Optional<Product>productOptional=Repository.findProductByname(product.getName());
-        if(productOptional.isPresent()){
-            throw new IllegalStateException("Name taken");
-        }
-        Repository.save(product);
-    }
+    //public void addNewProduct(Product product) {
+       //Optional<Product>productOptional=Repository.(product.getName());
+        //if(productOptional.isPresent()){
+           // throw new IllegalStateException("Name taken");
+        //}
+       // Repository.save(product);
+    //
 
     public Product saveProduct(Product product){
        return Repository.save(product);
@@ -32,18 +34,18 @@ public class ProductService {
     public Product getProductById(int id){
         return Repository.findById(id).orElse(null);
     }
-    //public Product getProductByname(String name){
-        //return Repository.findByname(name);
-    //}
+    public Product getProductByname(String name){
+        return Repository.findByName(name);
+    }
     public String deleteProduct(int id){
         Repository.deleteById(id);
         return "Product rempved"+id;
     }
-    //public Product updateProduct(Product product){
-      //  Product existingProduct= Repository.findById(product.getId()).orElse(null);
-      // existingProduct.setName(product.getName());
-      //  existingProduct.setQuantity(product.getQuantity());
-       // existingProduct.setPrice(product.getPrice());
-      //  return Repository.save(existingProduct);
-   // }
+    public Product updateProduct(Product product){
+       Product existingProduct= Repository.findById(product.getId()).orElse(null);
+       existingProduct.setName(product.getName());
+        existingProduct.setQuantity(product.getQuantity());
+        existingProduct.setPrice(product.getPrice());
+       return Repository.save(existingProduct);
+    }
 }
