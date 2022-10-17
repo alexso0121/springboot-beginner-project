@@ -2,6 +2,7 @@ package com.javatechie.trymysql.contoller;
 
 import com.javatechie.trymysql.Entity.Product;
 
+import com.javatechie.trymysql.service.OrderService;
 import com.javatechie.trymysql.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,9 @@ public class ProductController {
 
     @Autowired
     private ProductService service;
+    @Autowired
+    private OrderService orderService;
+
 
 
 
@@ -27,11 +31,11 @@ public class ProductController {
     public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
     }
-   // @PostMapping
-    //public void addnewproduct(@RequestBody Product products){
-        //service.addNewProduct(products);
-        //System.out.println(products);
-    //}
+
+    @GetMapping("/price/{name}")
+    public double showprice(@PathVariable String name ){
+        return service.findpricebyname(name);
+    }
 
 
     @PostMapping

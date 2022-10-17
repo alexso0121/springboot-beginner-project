@@ -15,13 +15,7 @@ public class ProductService {
     @Autowired
     private ProductRepository Repository;
 
-    //public void addNewProduct(Product product) {
-       //Optional<Product>productOptional=Repository.(product.getName());
-        //if(productOptional.isPresent()){
-           // throw new IllegalStateException("Name taken");
-        //}
-       // Repository.save(product);
-    //
+
 
     public Product saveProduct(Product product){
        return Repository.save(product);
@@ -41,6 +35,10 @@ public class ProductService {
     public String deleteProduct(int id){
         Repository.deleteById(id);
         return "Product rempved"+id;
+
+    }
+    public double findpricebyname(String name){
+        return Repository.findprice(name);
     }
     public Product updateProduct(Product product){
        Product existingProduct= Repository.findById(product.getId()).orElse(null);
